@@ -32,21 +32,20 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      scrolled 
-        ? 'bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl shadow-lg border-b border-slate-200/50 dark:border-slate-700/50' 
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled
+        ? 'bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl shadow-lg border-b border-slate-200/50 dark:border-slate-700/50'
         : 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-md'
-    }`}>
+      }`}>
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
 
           <Link to="/" className="flex items-center">
-  <img
-    src="/logo.png"
-    alt="Scriptoria Publication House"
-    className="h-20 md:h-20 w-80 object-contain"
-  />
-</Link>
+            <img
+              src="/logo.png"
+              alt="Scriptoria Publication House"
+              className="h-20 md:h-20 w-80 object-contain"
+            />
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
@@ -85,6 +84,14 @@ export const Navbar = () => {
             >
               FAQ
             </a>
+
+            <a
+              href="#contact"
+              className="px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition-all duration-300 relative group"
+            >
+              Contact
+            </a>
+
 
             {/* NEW MENU */}
             <Link

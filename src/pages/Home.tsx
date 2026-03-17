@@ -9,9 +9,10 @@ import { Label } from '@/components/ui/label';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { useNavigate } from 'react-router-dom';
-import { BookOpen, Users, Award, Pen, Mail, Phone, MapPin, Star, TrendingUp, CheckCircle, Sparkles, ArrowRight, Globe, Zap, Send, Target, Rocket, Shield, Clock, DollarSign, Package, FileCheck, Palette, Upload, Image as ImageIcon } from 'lucide-react';
+import { BookOpen, Users, Award, Pen, Mail, Phone, MapPin, Star, TrendingUp, CheckCircle, Sparkles, ArrowRight, Globe, Zap, Send, Target, Rocket, Shield,FileText, Clock, DollarSign, Package, FileCheck, Palette, Upload, Image as ImageIcon } from 'lucide-react';
 import { toast } from 'sonner';
-import { useState } from 'react';
+import { useState} from 'react';
+
 
 const Home = () => {
   const navigate = useNavigate();
@@ -44,6 +45,8 @@ const Home = () => {
     setHeroForm({ name: '', email: '', phone: '', bookTitle: '' });
   };
 
+  
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 via-blue-50/30 to-slate-50 dark:from-slate-900 dark:via-blue-950/20 dark:to-slate-950">
       <Navbar />
@@ -74,7 +77,7 @@ const Home = () => {
                     <Sparkles className="h-3 w-3 mr-1 inline" />
                     Trusted Publisher
                   </Badge>
-                  <span className="text-sm font-bold text-slate-700 dark:text-slate-300">Scriptoria Publication House</span>
+                  <span className="text-sm font-bold text-slate-700 dark:text-slate-300">Scriptoria Press</span>
                 </div>
               </div>
               
@@ -90,7 +93,7 @@ const Home = () => {
               </h1>
               
               <p className="text-lg md:text-xl text-slate-700 dark:text-slate-300 leading-relaxed font-medium">
-                Transform your groundbreaking research into a published masterpiece. Join hundreds of authors who trust Scriptoria Publication House with their academic and literary work.
+                Transform your groundbreaking research into a published masterpiece. Join hundreds of authors who trust Scriptoria Press with their academic and literary work.
               </p>
 
               <div className="flex flex-wrap gap-4 pt-4">
@@ -189,9 +192,12 @@ const Home = () => {
                     <Send className="ml-2 h-5 w-5" />
                   </Button>
                   
-                  <p className="text-xs text-center text-slate-500 dark:text-slate-400">
+                  {/* <p className="text-xs text-center text-slate-500 dark:text-slate-400">
                     By submitting, you agree to our Terms & Conditions
-                  </p>
+                  </p> */}
+                  <p className="text-xs text-center text-slate-500 mt-2">
+  🔒 We respect your privacy. Your information is completely secure and will never be shared with third parties.
+</p>
                 </form>
               </CardContent>
             </Card>
@@ -233,19 +239,68 @@ const Home = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12 animate-slide-up">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-slate-100">
-              Scriptoria Publication House - Your Trusted Publisher
+              Scriptoria Press - Your Trusted Publisher
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-teal-600 via-blue-600 to-indigo-600 mx-auto rounded-full"></div>
           </div>
 
           <div className="prose prose-lg max-w-none space-y-6 text-slate-600 dark:text-slate-300 leading-relaxed">
             <p className="text-lg md:text-xl">
-              Have you ever dreamed of having your name on the cover of a publication? Imagine holding your own published book, sharing your knowledge with the world, and inspiring future generations. At <strong className="text-teal-600 dark:text-teal-400">Scriptoria Publication House</strong>, we make that dream a reality!
+              Scriptoria Press is a publishing house dedicated to transforming ideas, stories, and knowledge into professionally published books. We work with authors across genres and provide comprehensive support throughout the publishing journey from manuscript development to final publication.
             </p>
 
             <p className="text-lg">
-              Whether you're an aspiring author with groundbreaking ideas to share or a seasoned writer looking for the perfect publishing partner, we provide a smooth, transparent, and rewarding publishing experience. From professional editing and stunning book design to global distribution and marketing, we handle everything—so you can focus on what truly matters: your work, your creativity, your legacy.
+              Along with publishing, we also assist authors with writing, editing, book design, and other essential services to help bring their vision to life.
             </p>
+
+            <div className="mt-4 flex justify-center">
+  <Button 
+    onClick={() => window.open('https://softgenai-internship.vercel.app/', '_blank')}
+    className="bg-gradient-to-r from-teal-600 to-indigo-600 text-white hover:scale-105 transition"
+  >
+    Visit Our Website →
+  </Button>
+</div>
+
+<div className="mt-12 max-w-4xl mx-auto">
+  <div className="bg-gradient-to-br from-teal-50 via-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl p-8 shadow-xl">
+
+    {/* Heading */}
+    <h3 className="text-2xl md:text-3xl font-bold text-center text-slate-900 dark:text-white mb-4">
+      What We Publish
+    </h3>
+
+    <p className="text-center text-slate-600 dark:text-slate-300 mb-8">
+      Scriptoria Press welcomes manuscripts across a wide range of genres.
+    </p>
+
+    {/* Genres Grid */}
+    <div className="grid sm:grid-cols-2 gap-4">
+      {[
+        "Fiction (novels, short stories)",
+        "Non-fiction and thought leadership",
+        "Self-help and personal development",
+        "Biographies and memoirs",
+        "Educational and knowledge books",
+        "Inspirational and motivational books",
+        "Professional and business books"
+      ].map((item, i) => (
+        <div 
+          key={i}
+          className="flex items-center gap-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-4 shadow-sm hover:shadow-md transition-all"
+        >
+          <div className="p-2 bg-gradient-to-br from-teal-500 to-indigo-500 rounded-lg">
+            <CheckCircle className="h-5 w-5 text-white" />
+          </div>
+          <span className="text-sm md:text-base font-medium text-slate-700 dark:text-slate-300">
+            {item}
+          </span>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</div>
 
             <Card className="border-2 border-teal-100 dark:border-teal-900 bg-gradient-to-br from-teal-50 to-blue-50 dark:from-teal-950/30 dark:to-blue-950/30 my-8 shadow-lg">
               <CardHeader>
@@ -381,6 +436,287 @@ const Home = () => {
               </Card>
             ))}
           </div>
+
+            <div className="mt-16 max-w-6xl mx-auto">
+  <Card className="border-2 border-slate-200 dark:border-slate-700 shadow-xl bg-gradient-to-br from-white via-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-900">
+
+    <CardContent className="p-8 md:p-10 space-y-6">
+      
+      {/* Heading */}
+      <div className="text-center space-y-3">
+        <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-teal-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          Author Support Services
+        </h3>
+
+        <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+          We provide a range of services designed to support authors at every stage of the book creation process.
+        </p>
+      </div>
+
+      {/* Sub Heading */}
+      <h4 className="text-xl font-semibold text-center text-slate-800 dark:text-slate-200 mt-6">
+        Services Include
+      </h4>
+
+      {/* Services Grid */}
+      <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-5 mt-4">
+        {[
+          "Book writing and content development support",
+          "Manuscript editing and proofreading",
+          "Book formatting and typesetting",
+          "Cover design and interior layout design",
+          "ISBN allocation and copyright guidance",
+          "Print and eBook publishing support",
+          "Publishing consultation for first-time authors"
+        ].map((item, i) => (
+          <div 
+            key={i}
+            className="flex items-start gap-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+          >
+            <div className="p-2 bg-gradient-to-br from-teal-500 to-indigo-500 rounded-lg mt-1">
+              <CheckCircle className="h-4 w-4 text-white" />
+            </div>
+            <span className="text-sm md:text-base text-slate-700 dark:text-slate-300 font-medium leading-relaxed">
+              {item}
+            </span>
+          </div>
+        ))}
+      </div>
+
+    </CardContent>
+  </Card>
+</div>
+
+        <div className="mt-20 max-w-5xl mx-auto text-center">
+  
+  {/* Heading */}
+  <h3 className="text-3xl md:text-4xl font-bold mb-6 text-slate-900 dark:text-white">
+    Why Publish With 
+    <span className="bg-gradient-to-r from-teal-600 to-indigo-600 bg-clip-text text-transparent">
+      {" "}Scriptoria Press
+    </span>
+  </h3>
+
+  {/* Subtitle */}
+  <p className="text-lg text-slate-600 dark:text-slate-300 mb-10 max-w-2xl mx-auto">
+    Everything you need to turn your manuscript into a professionally published book — all in one place.
+  </p>
+
+  {/* Points List */}
+  <div className="space-y-5 text-left">
+    {[
+      "End-to-end support from writing to final publication",
+      "Professional editing, design, and production services",
+      "ISBN registration and formal publishing process",
+      "Print and digital publishing formats",
+      "Support for both new and experienced authors",
+      "Dedicated assistance throughout the publishing journey"
+    ].map((item, i) => (
+      <div 
+        key={i}
+        className="flex items-start gap-4 p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:shadow-md transition"
+      >
+        {/* Number */}
+        <div className="min-w-[40px] h-[40px] flex items-center justify-center rounded-full bg-gradient-to-br from-teal-500 to-indigo-500 text-white font-bold">
+          {i + 1}
+        </div>
+
+        {/* Text */}
+        <p className="text-base md:text-lg text-slate-700 dark:text-slate-300 font-medium">
+          {item}
+        </p>
+      </div>
+    ))}
+  </div>
+
+  {/* CTA */}
+  <div className="mt-10">
+    <Button 
+      onClick={() => document.getElementById('hero-form')?.scrollIntoView({ behavior: 'smooth' })}
+      className="bg-gradient-to-r from-teal-600 to-indigo-600 text-white px-8 py-4 text-lg shadow-lg hover:scale-105 transition"
+    >
+      Start Your Publishing Journey 🚀
+    </Button>
+  </div>
+
+</div>
+
+<div className="mt-20 max-w-6xl mx-auto">
+  
+  {/* Heading */}
+  <div className="text-center mb-12">
+    <h3 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
+      Publishing 
+      <span className="bg-gradient-to-r from-teal-600 to-indigo-600 bg-clip-text text-transparent">
+        {" "}Process
+      </span>
+    </h3>
+
+    <p className="text-lg text-slate-600 dark:text-slate-300 mt-3 max-w-2xl mx-auto">
+      Our streamlined process helps authors turn their manuscripts into professionally published books.
+    </p>
+  </div>
+
+  {/* Steps */}
+  <div className="grid md:grid-cols-5 gap-6">
+    {[
+      "Manuscript or Idea Submission",
+      "Writing / Editing Support (if required)",
+      "Design and Book Formatting",
+      "ISBN Registration and Production",
+      "Print and Digital Publication"
+    ].map((step, i) => (
+      <div 
+        key={i}
+        className="relative group text-center"
+      >
+        {/* Circle */}
+        <div className="w-14 h-14 mx-auto flex items-center justify-center rounded-full bg-gradient-to-br from-teal-500 to-indigo-500 text-white font-bold text-lg shadow-lg group-hover:scale-110 transition">
+          {i + 1}
+        </div>
+
+        {/* Line (Desktop only) */}
+        {i !== 4 && (
+          <div className="hidden md:block absolute top-7 left-full w-full h-1 bg-gradient-to-r from-teal-500 to-indigo-500"></div>
+        )}
+
+        {/* Text */}
+        <p className="mt-4 text-sm md:text-base font-medium text-slate-700 dark:text-slate-300">
+          {step}
+        </p>
+      </div>
+    ))}
+  </div>
+
+</div>
+
+<div className="mt-24 py-16 px-6 rounded-3xl bg-gradient-to-r from-teal-600 via-blue-600 to-indigo-600 text-white text-center shadow-2xl max-w-6xl mx-auto relative overflow-hidden">
+
+  {/* Glow Effect */}
+  <div className="absolute inset-0 bg-white/10 blur-3xl opacity-20"></div>
+
+  {/* Content */}
+  <div className="relative z-10 max-w-3xl mx-auto">
+    
+    <h3 className="text-3xl md:text-4xl font-bold mb-4">
+      Publish Your Book
+    </h3>
+
+    <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
+      Have a story, idea, or expertise to share? Let Scriptoria Press help you transform your manuscript into a professionally published book.
+    </p>
+
+    {/* Buttons */}
+    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+  
+  <Button 
+  onClick={() => document.getElementById('hero-form')?.scrollIntoView({ behavior: 'smooth' })}
+  className="bg-white text-teal-700 font-semibold px-6 py-3 hover:bg-gray-100 hover:text-teal-800 transition-all duration-300"
+>
+  Submit Manuscript
+</Button>
+
+  <Button 
+  variant="outline"
+  onClick={() => navigate('/contact')}
+  className="bg-white text-teal-700 font-semibold px-6 py-3 hover:bg-gray-100 hover:text-teal-800 transition-all duration-300"
+>
+  Contact Our Publishing Team
+</Button>
+
+</div>
+
+  </div>
+</div>
+
+<div className="mt-20 max-w-6xl mx-auto text-center">
+  
+  {/* Heading */}
+  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-slate-900 dark:text-white">
+    Our Publishing Services
+  </h3>
+
+  {/* Services with Icons */}
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 mt-10">
+    {[
+      { icon: Pen, label: "Writing Assistance" },
+      { icon: FileText, label: "Editing & Proofreading" },
+      { icon: Palette, label: "Book Cover Design" },
+      { icon: BookOpen, label: "Book Formatting" },
+      { icon: Shield, label: "ISBN & Copyright" },
+      { icon: Globe, label: "Print & eBook Publishing" }
+    ].map((item, i) => (
+      <div 
+        key={i}
+        className="flex flex-col items-center gap-3 p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:shadow-md transition"
+      >
+        <div className="p-3 bg-gradient-to-br from-teal-500 to-indigo-500 rounded-full">
+          <item.icon className="h-5 w-5 text-white" />
+        </div>
+        <p className="text-sm font-medium text-slate-700 dark:text-slate-300 text-center">
+          {item.label}
+        </p>
+      </div>
+    ))}
+  </div>
+
+  {/* Bottom CTA Line */}
+  <div className="mt-10 text-lg text-slate-700 dark:text-slate-300">
+    <span 
+      onClick={() => window.open('https://softgenai-internship.vercel.app/', '_blank')}
+      className="text-teal-600 font-semibold cursor-pointer hover:underline"
+    >
+      Visit our Website
+    </span>
+    {" | "}
+    <span 
+      onClick={() => document.getElementById('hero-form')?.scrollIntoView({ behavior: 'smooth' })}
+      className="text-indigo-600 font-semibold cursor-pointer hover:underline"
+    >
+      Click here for Free Consultation
+    </span>
+  </div>
+
+</div>
+
+    <div className="mt-24 max-w-6xl mx-auto">
+  
+  <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-600 via-blue-600 to-teal-600 text-white shadow-2xl p-8 md:p-12">
+    
+    {/* Glow effect */}
+    <div className="absolute inset-0 bg-white/10 blur-3xl opacity-20"></div>
+
+    <div className="relative z-10 text-center max-w-3xl mx-auto space-y-6">
+      
+      {/* Title */}
+      <h3 className="text-3xl md:text-4xl font-bold">
+        Pharmaceutics
+      </h3>
+
+      {/* Subtitle */}
+      <h4 className="text-xl md:text-2xl font-semibold text-white/90">
+        Pharmaceutical Development
+      </h4>
+
+      {/* Description */}
+      <p className="text-lg text-white/90 leading-relaxed">
+        Our Pharmaceutical Development Division focuses on developing innovative healthcare products through research-driven formulation and scientific expertise.
+      </p>
+
+      {/* Coming Soon Badge */}
+      <div className="inline-block mt-4 px-6 py-2 rounded-full bg-white text-indigo-700 font-semibold shadow-lg">
+        🚀 Coming Soon
+      </div>
+
+      {/* Footer Line */}
+      <p className="text-sm text-white/80 mt-4">
+        Stay tuned for updates on our upcoming formulations
+      </p>
+
+    </div>
+  </div>
+
+</div>
 
           <div className="text-center mt-16">
             <Card className="max-w-3xl mx-auto bg-gradient-to-br from-teal-50 to-blue-50 dark:from-teal-950/30 dark:to-blue-950/30 border-2 border-teal-200 dark:border-teal-800 shadow-xl">
@@ -570,7 +906,7 @@ const Home = () => {
               Our Advantages
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-slate-100">
-              Why Choose <span className="bg-gradient-to-r from-teal-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">Scriptoria Publication House</span>
+              Why Choose <span className="bg-gradient-to-r from-teal-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">Scriptoria Press</span>
             </h2>
             <p className="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
               We combine cutting-edge technology with personalized support to accelerate your publishing success
@@ -753,6 +1089,135 @@ const Home = () => {
         </div>
       </section>
 
+      <section id="contact" className="py-20 px-4 bg-gradient-to-b from-white to-blue-50 dark:from-gray-900 dark:to-gray-950">
+  <div className="container mx-auto max-w-7xl">
+
+    {/* Heading */}
+    <div className="text-center mb-12">
+      <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">
+        Contact Us
+      </h2>
+      <p className="text-lg text-slate-600 dark:text-slate-300 mt-4">
+        Still have questions? Get expert guidance for your research or publication journey.
+      </p>
+    </div>
+
+    <div className="grid lg:grid-cols-3 gap-10">
+
+      {/* LEFT: Contact Form */}
+      <div className="lg:col-span-2">
+        <Card className="shadow-xl border-2">
+          <CardContent className="p-6 space-y-4">
+
+            <form onSubmit={handleContactSubmit} className="space-y-4">
+
+              <Input
+                placeholder="Your Name"
+                value={contactForm.name}
+                onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
+                required
+              />
+
+              <Input
+                type="email"
+                placeholder="Your Email"
+                value={contactForm.email}
+                onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
+                required
+              />
+
+              <Textarea
+                placeholder="Your Message"
+                value={contactForm.message}
+                onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
+                rows={4}
+                required
+              />
+
+              <Button type="submit" className="w-full bg-gradient-to-r from-teal-600 to-indigo-600 text-white">
+                Send Message
+                <Send className="ml-2 h-4 w-4" />
+              </Button>
+
+            </form>
+
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* RIGHT: Common FAQs */}
+      <div className="space-y-4 max-h-[500px] overflow-y-auto pr-2">
+
+  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">
+    Common FAQs
+  </h3>
+
+  <Accordion type="single" collapsible className="space-y-3">
+
+    {[
+      {
+        q: "What services does Scientific Era provide?",
+        a: "Scientific Era offers end-to-end support including research paper writing, publication guidance, patent drafting, book publishing, copyright, trademark support, webinars, and awards."
+      },
+      {
+        q: "Who can use your services?",
+        a: "Our services are for PhD scholars, UG/PG students, academicians, researchers, startups, professionals, and institutions."
+      },
+      {
+        q: "Do you guarantee publication in SCI/Scopus journals?",
+        a: "We provide expert guidance and support, but final acceptance depends on the journal's peer-review process."
+      },
+      {
+        q: "Can you convert thesis into research paper or book?",
+        a: "Yes, we help transform theses into research papers or academic books with editing and publishing support."
+      },
+      {
+        q: "Do you assist with patent drafting?",
+        a: "Yes, we provide patent drafting, documentation, and filing assistance for national and international patents."
+      },
+      {
+        q: "How long does publication take?",
+        a: "Preparation takes a few days to weeks, but journal review timelines vary."
+      },
+      {
+        q: "Is my research data confidential?",
+        a: "Yes, we maintain strict confidentiality and professional ethics."
+      },
+      {
+        q: "Do you support international researchers?",
+        a: "Yes, we provide global support through remote consultation."
+      },
+      {
+        q: "Do you provide consultation?",
+        a: "Yes, we offer initial consultation to understand your requirements."
+      },
+      {
+        q: "How can I collaborate?",
+        a: "You can contact us to explore research partnerships and collaborations."
+      }
+    ].map((item, i) => (
+      <AccordionItem key={i} value={`item-${i}`} className="border rounded-lg px-4 bg-white dark:bg-slate-800">
+        
+        <AccordionTrigger className="text-left font-medium">
+          {i + 1}. {item.q}
+        </AccordionTrigger>
+
+        <AccordionContent className="text-sm text-slate-600 dark:text-slate-300">
+          {item.a}
+        </AccordionContent>
+
+      </AccordionItem>
+    ))}
+
+  </Accordion>
+
+</div>
+
+    </div>
+
+  </div>
+</section>
+
       {/* Footer */}
       <footer className="bg-gradient-to-br from-slate-900 via-blue-950 to-indigo-950 text-white py-16 px-4 border-t-4 border-teal-500">
         <div className="container mx-auto max-w-6xl">
@@ -844,7 +1309,7 @@ const Home = () => {
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <div className="space-y-2">
                 <p className="text-gray-400 text-sm text-center md:text-left">
-                  © 2025 Scriptoria Publication House. All rights reserved. Built with passion for empowering authors.
+                  © 2025 Scriptoria Press. All rights reserved. Built with passion for empowering authors.
                 </p>
                 <p className="text-gray-500 text-xs text-center md:text-left">
                   This site is powered by SCIENTISTICERA PRIVATE LIMTED
